@@ -7,7 +7,7 @@ class phonebook:
         self.database = {}
 
     def create_new_contact(self):
-        print(" *************** Creating a new contact ***********")
+        print(" \n *************** Creating a new contact *********** \n ")
 
         print(" Type the name of the person. ")
         name = str(input())
@@ -18,38 +18,34 @@ class phonebook:
         print(" Number added in the database. ")
 
     def find_phone_num(self):
-        print(" *************** Finding a phone number ***********")
+        print(" \n *************** Finding a phone number *********** \n ")
 
         print(" Type the name of the person. ")
         name = str(input())
 
-        try:
-            phone_num = self.database.get(name)
-            print(" The number is {} ".format(phone_num))
+        phone_num = self.database.get(name)
+        print(" The number is {} ".format(phone_num))
 
-        except KeyError:
-            print(" Name not found. ")
-            sys.exit(0)
+
 
 
     def change_phone_num(self):
-        print(" *************** Changing a phone number ***********")
+        print(" \n *************** Changing a phone number *********** \n")
 
         print(" Type the name of the person. ")
         name = str(input())
         print(" Type the new phone number. ")
         num = input()
 
-        try:
+        if name in self.database:
             self.database[name] = num
 
-        except KeyError:
-            print(" Name not found. ")
-            sys.exit(0)
+        else:
+            print(" Name not found.")
 
 
     def remove_contact(self):
-        print(" *************** Removing a contact ***********")
+        print(" \n *************** Removing a contact *********** \n ")
 
         print(" Type the name of the person. ")
         name = str(input())
@@ -59,12 +55,12 @@ class phonebook:
 
         except KeyError:
             print(" Name not found. ")
-            sys.exit(0)
+            pass
 
 
 
     def print(self):
-        print(" *************** Printing the database ***********")
+        print(" \n *************** Printing the database *********** \n \n")
 
         for key in self.database.keys():
             entry = " Name: {},  Phone Number: {} ".format(key, self.database.get(key))
