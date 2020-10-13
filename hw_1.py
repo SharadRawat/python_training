@@ -8,6 +8,7 @@ class phonebook:
 
     def create_new_contact(self):
         print(" *************** Creating a new contact ***********")
+
         print(" Type the name of the person. ")
         name = str(input())
         print(" Type the phone number. ")
@@ -17,6 +18,8 @@ class phonebook:
         print(" Number added in the database. ")
 
     def find_phone_num(self):
+        print(" *************** Finding a phone number ***********")
+
         print(" Type the name of the person. ")
         name = str(input())
 
@@ -30,6 +33,8 @@ class phonebook:
 
 
     def change_phone_num(self):
+        print(" *************** Changing a phone number ***********")
+
         print(" Type the name of the person. ")
         name = str(input())
         print(" Type the new phone number. ")
@@ -44,6 +49,8 @@ class phonebook:
 
 
     def remove_contact(self):
+        print(" *************** Removing a contact ***********")
+
         print(" Type the name of the person. ")
         name = str(input())
 
@@ -57,6 +64,8 @@ class phonebook:
 
 
     def print(self):
+        print(" *************** Printing the database ***********")
+
         for key in self.database.keys():
             entry = " Name: {},  Phone Number: {} ".format(key, self.database.get(key))
             print(entry)
