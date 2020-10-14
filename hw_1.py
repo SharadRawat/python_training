@@ -75,10 +75,15 @@ if __name__ == "__main__":
         print(" What do you want, man/woman? \n 1) Create a new entry \n 2) Find a number \n 3) Change a phone number \n 4) Remove a contact \n 5) Print")
 
 
-        while True:
-            print(" \n Type a number from (1,5)    ")
-            usr_response = int(input())
-            _ = function_call_dict[usr_response]()
+        try:
+            while True:
+                print(" \n Type a number from (1,5)    ")
+                usr_response = int(input())
+                _ = function_call_dict.get(usr_response)()
+
+        except Exception as e:
+            print(e)
+            print(" This input does exist. Try again.")
 
     except KeyboardInterrupt:
         print(" Keyboard Interrupt by user.")
